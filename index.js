@@ -124,3 +124,15 @@ function capitalize(s) {
 
     ]
 };
+
+
+
+// Given two arrays of strings, return the number of times each string of the second array appears in the first array.
+
+function solve(a, b) {
+    let result = []
+    for (let item of b) {
+        result.push(a.filter(word => item === word).length)
+    }
+    return result
+}
