@@ -153,3 +153,29 @@ function evensAndOdds(num) {
         return num.toString(16);
     }
 }
+
+
+
+// Given an array of positive integers (the weights of the people), return a new array/tuple of two integers, where the first one is the total weight of team 1, and the second one is the total weight of team 2.
+
+
+function rowWeights(array) {
+    let team1 = []
+    let team2 = []
+    let result = []
+    const reducer = (accumulator, currentValue) => accumulator + currentValue;
+    for (let i = 0; i < array.length; i += 2) {
+        team1.push(array[i])
+    }
+    for (let i = 1; i < array.length; i += 2) {
+        team2.push(array[i])
+    }
+    if (team1.length == 0) {
+        team1.push(0)
+    }
+    if (team2.length == 0) {
+        team2.push(0)
+    }
+    result.push((team1.reduce(reducer)), (team2.reduce(reducer)))
+    return result
+}
